@@ -21,9 +21,4 @@ vars = { ENVIRONMENT = "staging", ML_SERVICE_URL = "https://staging-ml-service.r
 name = "disease-prediction-system-dev"
 vars = { ENVIRONMENT = "development", ML_SERVICE_URL = "http://localhost:5000" }
 
-# Routes configuration
-[[routes]]
-pattern = "example.com/*"
-zone_name = "example.com"
-
 
