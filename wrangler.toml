@@ -1,11 +1,9 @@
 name = "disease-prediction-system"
 main = "cloudflare-worker/src/index.js"
 compatibility_date = "2024-12-01"
-type = "javascript"
 
 # Cloudflare Account ID and Worker settings
 workers_dev = true
-account_id = ""  # Replace with your account ID or set via CLI
 
 # Environment variables - Set these in Cloudflare Dashboard
 [vars]
@@ -27,22 +25,5 @@ vars = { ENVIRONMENT = "development", ML_SERVICE_URL = "http://localhost:5000" }
 [[routes]]
 pattern = "example.com/*"
 zone_name = "example.com"
-
-# Analytics Engine binding (optional - for logging/monitoring)
-# [[analytics_engine_bindings]]
-# dataset = "disease_prediction"
-
-# KV namespace bindings (for caching, optional)
-[[kv_namespaces]]
-binding = "CACHE"
-id = ""  # Replace with your KV namespace ID
-preview_id = ""  # Replace with your preview KV namespace ID
-
-# Cloudflare Pages integration
-# Uncomment the following to deploy frontend to Cloudflare Pages
-# [pages]
-# build.command = "echo 'No build required'"
-# build.cwd = "."
-# build.root_dir = "public"
 
 
