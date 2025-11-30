@@ -1,0 +1,38 @@
+# This file contains the Project Configuration Parameters
+
+# Random State
+random_state: 101
+
+# Verbose for Log Prints
+verbose: True
+
+# Dataset Path
+dataset:
+  # Training Dataset Path
+  training_data_path: './dataset/training_data.csv'
+  # Test Dataset Path
+  test_data_path: './dataset/test_data.csv'
+  # Validation Data Size for train_test_split
+  validation_size: 0.33
+
+# Model Parameters
+model:
+  # Decision Tree
+  decision_tree:
+    criterion: 'entropy'
+
+  # Random Forest Classifier
+  random_forest:
+    n_estimators: 10
+
+  # AdaBoost Classifier (Adaptive Boosting)
+  # AdaBoost works by combining multiple weak learners (decision stumps/trees)
+  # It adaptively adjusts weights of misclassified samples in each iteration
+  adaboost:
+    n_estimators: 100             # Number of weak learners to train (increased for better performance)
+    learning_rate: 0.8             # Learning rate (shrinkage factor, lower prevents overfitting)
+    base_estimator_max_depth: 3   # Max depth of base DecisionTree (3 allows more complex weak learners)
+    base_estimator_criterion: 'gini'  # Criterion for base estimator
+
+# Model Save Path
+model_save_path: './saved_model/'

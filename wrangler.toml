@@ -1,0 +1,12 @@
+name = "disease-prediction-api"
+main = "cloudflare-worker/src/index.js"
+compatibility_date = "2024-01-01"
+
+# Environment variables
+# Set ML_SERVICE_URL in Cloudflare Dashboard or via wrangler secret
+# [vars]
+# ML_SERVICE_URL = "https://your-ml-service.railway.app"
+
+# For Cloudflare Pages deployment, use workers_dev = true
+workers_dev = true
+

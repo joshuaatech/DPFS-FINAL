@@ -1,0 +1,19 @@
+{
+  "name": "disease-prediction-system",
+  "version": "1.0.0",
+  "description": "Disease Prediction System with Cloudflare Worker",
+  "scripts": {
+    "deploy": "wrangler deploy"
+  },
+  "keywords": [
+    "cloudflare",
+    "worker",
+    "disease-prediction"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
+
