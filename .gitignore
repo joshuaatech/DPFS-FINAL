@@ -130,3 +130,44 @@ dmypy.json
 
 # PyCharm IDE
 .idea
+
+# Cloudflare Workers
+.wrangler/
+wrangler.toml.local
+.env.local
+.env.*.local
+dist/
+worker-dist/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+
+# Local development
+local_test/
+*.local.js
+debug/
+
+# OS files
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Secrets and credentials
+secrets.json
+.secrets
+credentials.json
+*.pem
+*.key

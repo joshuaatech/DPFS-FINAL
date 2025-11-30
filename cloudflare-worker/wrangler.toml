@@ -1,12 +1,31 @@
 name = "disease-prediction-api"
 main = "src/index.js"
-compatibility_date = "2024-01-01"
+compatibility_date = "2024-12-01"
+type = "javascript"
+
+# Cloudflare Worker settings
 workers_dev = true
 
-# Environment variables
-# Set ML_SERVICE_URL in Cloudflare Dashboard or via wrangler secret
+# Environment variables - Override in dashboard or via wrangler secret
 [vars]
-ML_SERVICE_URL = "https://your-ml-service-url.railway.app"
+ENVIRONMENT = "production"
+API_TIMEOUT = "30000"
+
+# Staging environment
+[env.staging]
+name = "disease-prediction-api-staging"
+vars = { ENVIRONMENT = "staging" }
+
+# Development environment
+[env.development]
+name = "disease-prediction-api-dev"
+vars = { ENVIRONMENT = "development" }
+
+# Routes (optional - uncomment if using custom domain)
+# [[routes]]
+# pattern = "api.example.com/*"
+# zone_name = "example.com"
+
 
 # KV Namespaces (optional - for storing frontend)
 # [[kv_namespaces]]

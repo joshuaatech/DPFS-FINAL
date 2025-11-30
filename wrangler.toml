@@ -1,12 +1,48 @@
-name = "disease-prediction-api"
+name = "disease-prediction-system"
 main = "cloudflare-worker/src/index.js"
-compatibility_date = "2024-01-01"
+compatibility_date = "2024-12-01"
+type = "javascript"
 
-# Environment variables
-# Set ML_SERVICE_URL in Cloudflare Dashboard or via wrangler secret
-# [vars]
-# ML_SERVICE_URL = "https://your-ml-service.railway.app"
-
-# For Cloudflare Pages deployment, use workers_dev = true
+# Cloudflare Account ID and Worker settings
 workers_dev = true
+account_id = ""  # Replace with your account ID or set via CLI
+
+# Environment variables - Set these in Cloudflare Dashboard
+[vars]
+ENVIRONMENT = "production"
+ML_SERVICE_URL = "https://your-ml-service-url.railway.app"  # Replace with your actual ML service URL
+API_TIMEOUT = "30000"  # API timeout in milliseconds
+
+# Staging environment configuration
+[env.staging]
+name = "disease-prediction-system-staging"
+vars = { ENVIRONMENT = "staging", ML_SERVICE_URL = "https://staging-ml-service.railway.app" }
+
+# Development environment configuration  
+[env.development]
+name = "disease-prediction-system-dev"
+vars = { ENVIRONMENT = "development", ML_SERVICE_URL = "http://localhost:5000" }
+
+# Routes configuration
+[[routes]]
+pattern = "example.com/*"
+zone_name = "example.com"
+
+# Analytics Engine binding (optional - for logging/monitoring)
+# [[analytics_engine_bindings]]
+# dataset = "disease_prediction"
+
+# KV namespace bindings (for caching, optional)
+[[kv_namespaces]]
+binding = "CACHE"
+id = ""  # Replace with your KV namespace ID
+preview_id = ""  # Replace with your preview KV namespace ID
+
+# Cloudflare Pages integration
+# Uncomment the following to deploy frontend to Cloudflare Pages
+# [pages]
+# build.command = "echo 'No build required'"
+# build.cwd = "."
+# build.root_dir = "public"
+
 
