@@ -21,4 +21,10 @@ vars = { ENVIRONMENT = "staging", ML_SERVICE_URL = "https://staging-ml-service.r
 name = "disease-prediction-system-dev"
 vars = { ENVIRONMENT = "development", ML_SERVICE_URL = "http://localhost:5000" }
 
+# Cloudflare Pages configuration
+[pages]
+build.command = "echo 'No build step required'"
+build.cwd = "."
+build.root_dir = "public"
+
 
